@@ -5,13 +5,18 @@
   "dependencies": {
     "@cypress/code-coverage": "^1.11.1",
     "@cypress/instrument-cra": "^1.0.0",
+    "axios": "^0.19.2",
+    "bootstrap-css-only": "^4.4.1",
     "cypress": "^4.0.1",
     "eslint-plugin-cypress": "^2.9.0",
     "istanbul-lib-coverage": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "nyc": "^15.0.0",
     "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
+    "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1"
   },
   "scripts": {
