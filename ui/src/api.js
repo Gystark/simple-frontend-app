@@ -13,6 +13,11 @@ const getAllPosts = () => {
     return axios.get(`${BASE_URL}/posts`, getOptions());
 };
 
+const login = (username, password) => {
+    return axios.post(`${BASE_URL}/login`, {username, password});
+};
+
 export {
-    getAllPosts
+    getAllPosts,
+    login
 };
