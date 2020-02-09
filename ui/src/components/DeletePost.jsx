@@ -32,6 +32,11 @@ const DeletePost = () => {
     const onSubmit = (event) => {
         event.preventDefault();
 
+        if (selectedPost === undefined) {
+            setError("Select a post and try again");
+            return;
+        }
+
         deletePost(selectedPost).then((res) => {
             setSuccess(`Post ${selectedPost} deleted successfully`);
             setSelectedPost(undefined);
