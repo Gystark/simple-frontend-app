@@ -2,13 +2,14 @@
 import React from "react";
 import {Redirect, Route} from "react-router-dom";
 import {LOGIN_ROUTE} from "../routes";
+import {AUTH_TOKEN_KEY} from "../common";
 
 const ProtectedRoute = ({children, ...rest}) => {
     return (
         <Route
             {...rest}
             render={({location}) =>
-                localStorage.getItem("authToken") ? (
+                localStorage.getItem(AUTH_TOKEN_KEY) ? (
                     children
                 ) : (
                     <Redirect

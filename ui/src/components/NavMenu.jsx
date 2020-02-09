@@ -21,7 +21,7 @@ const NavMenu = () => {
 
     return (
         <Navbar bg="light" expand="md">
-            <Navbar.Brand href="/" className="ml-4">Simple Frontend App</Navbar.Brand>
+            <Navbar.Brand href="/" className="ml-5">Simple Frontend App</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
@@ -34,7 +34,7 @@ const NavMenu = () => {
                     </NavDropdown>
                     <LinkContainer to={LOGOUT_ROUTE}><Nav.Link>Logout</Nav.Link></LinkContainer>
                 </Nav>
-                <Form inline onSubmit={(e) => history.push(SEARCH_ROUTE)}>
+                <Form inline onSubmit={(e) => history.push(SEARCH_ROUTE)} className="mr-5">
                     <FormControl type="text" placeholder="Search" className="mr-sm-2"/>
                     <Button variant="outline-success" type="submit">Search</Button>
                 </Form>

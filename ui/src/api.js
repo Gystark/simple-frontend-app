@@ -1,7 +1,8 @@
 import axios from "axios";
+import {AUTH_TOKEN_KEY} from "./common";
 
 const getAuthToken = () => {
-    return localStorage.getItem("authToken");
+    return localStorage.getItem(AUTH_TOKEN_KEY);
 };
 
 const BASE_URL = "http://localhost:3001";

@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button";
 import {login} from "../api";
 import {useHistory, useLocation} from "react-router-dom";
 import {HOME_ROUTE} from "../routes";
-import {extractServerError} from "../common";
+import {AUTH_TOKEN_KEY, extractServerError} from "../common";
 import ErrorMessage from "./ErrorMessage";
 
 const Login = () => {
@@ -23,7 +23,7 @@ const Login = () => {
         event.preventDefault();
 
         login(username, password).then((res) => {
-            localStorage.setItem("authToken", res.data.token);
+            localStorage.setItem(AUTH_TOKEN_KEY, res.data.token);
             history.push(location.state ? location.state.from : HOME_ROUTE);
         }).catch((err) => {
             setError(extractServerError());
