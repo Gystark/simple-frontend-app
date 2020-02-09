@@ -18,15 +18,15 @@ const Logout = () => {
     return (
         <Container className="mt-5">
             <Row>
-                <Col md={{span: 8, offset: 2}}>
+                <Col md={{span: 6, offset: 0}} className="mx-auto">
                     <h2>Are you sure you would like to log out?</h2>
                 </Col>
             </Row>
             <Row className="mt-3">
-                <Col md={{span: 4, offset: 2}}>
+                <Col md={{span: 2, offset: 4}}>
                     <Button variant="outline-success" onClick={() => onLogout()}>Log out</Button>
                 </Col>
-                <Col md={{span: 4, offset: 1}}>
+                <Col md={{span: 2, offset: 0}}>
                     <Button variant="outline-danger" onClick={() => history.goBack()}>Cancel</Button>
                 </Col>
             </Row>

@@ -10,8 +10,26 @@ const getOptions = () => {
     return {headers: {Authorisation: getAuthToken()}}
 };
 
-const getAllPosts = () => {
-    return axios.get(`${BASE_URL}/posts`, getOptions());
+const getPosts = (sortBy = undefined, order = undefined, search = undefined) => {
+    let options = getOptions();
+
+    if (sortBy !== undefined || order !== undefined || search !== undefined) {
+        options.params = {};
+
+        if (sortBy !== undefined) {
+            options.params._sort = sortBy;
+        }
+
+        if (order !== undefined) {
+            options.params._order = order;
+        }
+
+        if (search !== undefined) {
+            options.params.q = search;
+        }
+    }
+
+    return axios.get(`${BASE_URL}/posts`, options);
 };
 
 const login = (username, password) => {
@@ -19,6 +37,6 @@ const login = (username, password) => {
 };
 
 export {
-    getAllPosts,
+    getPosts,
     login
 };
