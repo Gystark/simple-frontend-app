@@ -36,7 +36,12 @@ const login = (username, password) => {
     return axios.post(`${BASE_URL}/login`, {username, password});
 };
 
+const deletePost = (postId) => {
+    return axios.delete(`${BASE_URL}/posts/${postId}`, getOptions());
+};
+
 export {
     getPosts,
-    login
+    login,
+    deletePost
 };

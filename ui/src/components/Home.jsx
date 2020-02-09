@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -28,7 +29,7 @@ const Home = () => {
                 </Col>
             </Row>
             <Row>
-                <Col md={{span:6, offset: 0}} className="mx-auto">
+                <Col md={{span:6, offset: 0}} className={classNames("mx-auto", "mt-3")}>
                     <h3>Note that it has a few known bugs, can you find all of them using Cypress?</h3>
                 </Col>
             </Row>

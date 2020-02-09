@@ -26,7 +26,7 @@ const Login = () => {
             localStorage.setItem(AUTH_TOKEN_KEY, res.data.token);
             history.push(location.state ? location.state.from : HOME_ROUTE);
         }).catch((err) => {
-            setError(extractServerError());
+            setError(extractServerError(err));
         });
     };
 
@@ -51,7 +51,7 @@ const Login = () => {
                                     <Form.Control type="password" placeholder="Enter your password" required onChange={(e) => setPassword(e.target.value)}/>
                                 </Col>
                             </Form.Group>
-                            <Button variant="primary" type="submit" className="mt-2">
+                            <Button variant="outline-primary" type="submit" className="mt-2">
                                 Login
                             </Button>
                         </Form>
