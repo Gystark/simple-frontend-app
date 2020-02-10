@@ -1,0 +1,16 @@
+# Based on https://www.gitpod.io/blog/gitpodify/
+github:
+  prebuilds:
+    master: true
+tasks:
+  - init: cd backend && yarn install --frozen-lockfile
+  - init: cd ui && yarn install --frozen-lockfile && yarn run cypress install
+image:
+  file: .gitpod.Dockerfile
+ports:
+  - port: 3000
+    onOpen: open-preview
+  - port: 6080
+    onOpen: open-preview  
+  - port: 3000-50000
+    onOpen: ignore
