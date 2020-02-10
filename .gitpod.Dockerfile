@@ -1,5 +1,7 @@
 FROM gitpod/workspace-full-vnc
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # Install Cypress dependencies as per https://docs.cypress.io/guides/guides/continuous-integration.html#Docker        
 RUN sudo apt-get update \
  && sudo apt-get install -y \
