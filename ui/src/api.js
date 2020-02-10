@@ -1,5 +1,6 @@
 import axios from "axios";
 import {AUTH_TOKEN_KEY} from "./common";
+import moment from "moment";
 
 const getAuthToken = () => {
     return localStorage.getItem(AUTH_TOKEN_KEY);
@@ -40,8 +41,17 @@ const deletePost = (postId) => {
     return axios.delete(`${BASE_URL}/posts/${postId}`, getOptions());
 };
 
+const addPost = (title, body) => {
+    return axios.post(`${BASE_URL}/posts`, {
+        title,
+        body,
+        postedAt: moment().format()
+    }, getOptions());
+};
+
 export {
     getPosts,
     login,
-    deletePost
+    deletePost,
+    addPost
 };
