@@ -1,10 +1,8 @@
 FROM gitpod/workspace-full-vnc
 
-ENV DEBIAN_FRONTEND noninteractive
-
 # Install Cypress dependencies as per https://docs.cypress.io/guides/guides/continuous-integration.html#Docker        
-RUN sudo apt-get update \
- && sudo apt-get install -y \
+RUN DEBIAN_FRONTEND=noninteractive sudo apt-get update \
+ && DEBIAN_FRONTEND=noninteractive sudo apt-get install -y \
   libgtk2.0-0 \
   libgtk-3-0 \
   libnotify-dev \
