@@ -1,0 +1,16 @@
+# Based on https://www.gitpod.io/blog/gitpodify/
+github:
+  prebuilds:
+    master: true
+tasks:
+  - init: cd backend && yarn install --frozen-lockfile
+    command: yarn start
+  - init: cd ui && yarn install --frozen-lockfile
+    command: yarn start
+image:
+  file: .gitpod.Dockerfile
+ports:
+  - port: 3000
+    onOpen: open-preview
+  - port: 3001
+    onOpen: ignore
