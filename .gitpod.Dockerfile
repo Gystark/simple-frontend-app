@@ -1,8 +1,8 @@
 FROM gitpod/workspace-full-vnc
 
 # Install Cypress dependencies as per https://docs.cypress.io/guides/guides/continuous-integration.html#Docker        
-RUN DEBIAN_FRONTEND=noninteractive sudo apt-get update \
- && DEBIAN_FRONTEND=noninteractive sudo apt-get install -y \
+RUN sudo apt-get update \
+ && DEBIAN_FRONTEND=noninteractive sudo apt-get install -y --no-install-recommends \
   libgtk2.0-0 \
   libgtk-3-0 \
   libnotify-dev \
@@ -13,4 +13,5 @@ RUN DEBIAN_FRONTEND=noninteractive sudo apt-get update \
   libxtst6 \
   xauth \
   xvfb \
+ && apt-get clean \
  && sudo rm -rf /var/lib/apt/lists/*
