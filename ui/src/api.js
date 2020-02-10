@@ -49,9 +49,24 @@ const addPost = (title, body) => {
     }, getOptions());
 };
 
+const updatePost = (id, title = undefined, body = undefined) => {
+    const data = {};
+
+    if (title !== undefined) {
+        data.title = title;
+    }
+
+    if (body !== undefined) {
+        data.body = body;
+    }
+
+    return axios.patch(`${BASE_URL}/posts/${id}`, data, getOptions());
+};
+
 export {
     getPosts,
     login,
     deletePost,
-    addPost
+    addPost,
+    updatePost
 };

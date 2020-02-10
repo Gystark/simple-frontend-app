@@ -11,8 +11,8 @@ import {addPost} from "../api";
 import {extractServerError} from "../common";
 
 const CreatePost = () => {
-    const [title, setTitle] = React.useState(undefined);
-    const [body, setBody] = React.useState(undefined);
+    const [title, setTitle] = React.useState("");
+    const [body, setBody] = React.useState("");
     const [error, setError] = React.useState(undefined);
     const [success, setSuccess] = React.useState(undefined);
 
@@ -22,8 +22,8 @@ const CreatePost = () => {
         if (title && body) {
             addPost(title, body).then((res) => {
                 setError(undefined);
-                setTitle(undefined);
-                setBody(undefined);
+                setTitle("");
+                setBody("");
                 setSuccess("Post created successfully");
             }).catch((error) => {
                 setSuccess(undefined);
