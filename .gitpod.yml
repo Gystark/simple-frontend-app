@@ -10,5 +10,7 @@ image:
 ports:
   - port: 3000
     onOpen: open-preview
-  - port: 3001
+  - port: 6080
+    onOpen: open-preview  
+  - port: 3000-50000
     onOpen: ignore
