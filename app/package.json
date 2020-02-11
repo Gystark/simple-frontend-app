@@ -1,8 +1,24 @@
 {
-  "name": "src",
+  "name": "app",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "coverage": "nyc report --reporter=text-summary --reporter=lcov",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "require-coverage": "nyc report --check-coverage --branches=80 --functions=80 --lines=80 --statement=80",
+    "start": "npm-run-all -p -r start:backend start:ui",
+    "start:gitpod": "npm-run-all -p -r start:backend start:ui:gitpod",
+    "start:backend": "cd backend && node server.js",
+    "start:ui": "BROWSER=none react-scripts start",
+    "start:ui:gitpod": "REACT_APP_BACKEND_HOST=$(gp url 3001) yarn start:ui",
+    "start:test": "BROWSER=none react-scripts -r @cypress/instrument-cra start",
+    "test": "npm-run-all -p -r start:test cy:run",
+    "test:coverage": "npm-run-all test coverage require-coverage",
+    "test:open": "npm-run-all -p -r start:test cy:open"
+  },
   "dependencies": {
+    "json-server": "^0.15.1",
     "@cypress/code-coverage": "^1.11.1",
     "@cypress/instrument-cra": "^1.0.0",
     "axios": "^0.19.2",
@@ -20,17 +36,6 @@
     "react-router-bootstrap": "^0.25.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1"
-  },
-  "scripts": {
-    "coverage": "nyc report --reporter=text-summary --reporter=lcov",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
-    "require-coverage": "nyc report --check-coverage --branches=80 --functions=80 --lines=80 --statement=80",
-    "start": "BROWSER=none react-scripts start",
-    "start:test": "BROWSER=none react-scripts -r @cypress/instrument-cra start",
-    "test": "npm-run-all -p -r start:test cy:run",
-    "test:coverage": "npm-run-all test coverage require-coverage",
-    "test:open": "npm-run-all -p -r start:test cy:open"
   },
   "eslintConfig": {
     "extends": [
