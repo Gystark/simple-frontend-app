@@ -3,8 +3,7 @@ github:
   prebuilds:
     master: true
 tasks:
-  - init: cd backend && yarn install --frozen-lockfile
-  - init: cd ui && yarn install --frozen-lockfile && yarn run cypress install
+  - init: yarn install --frozen-lockfile && yarn run cypress install
 image:
   file: .gitpod.Dockerfile
 ports:

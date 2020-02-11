@@ -12,7 +12,7 @@
     "start:backend": "cd backend && node server.js",
     "start:ui": "BROWSER=none react-scripts start",
     "start:ui:gitpod": "REACT_APP_BACKEND_HOST=$(gp url 3001) yarn start:ui",
-    "start:test": "BROWSER=none react-scripts -r @cypress/instrument-cra start",
+    "start:test": "REACT_APP_BACKEND_HOST=$(gp url 3001) BROWSER=none react-scripts -r @cypress/instrument-cra start",
     "test": "npm-run-all -p -r start:test cy:run",
     "test:coverage": "npm-run-all test coverage require-coverage",
     "test:open": "npm-run-all -p -r start:test cy:open"
