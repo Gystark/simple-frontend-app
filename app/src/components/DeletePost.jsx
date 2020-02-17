@@ -56,7 +56,7 @@ const DeletePost = () => {
     };
 
     return (
-        <Container fluid>
+        <Container fluid id="deletePostContainer">
             <h2 className={classNames("text-center", "mt-5")}>Delete a post</h2>
             <Row className={classNames("mx-auto", "mt-5")}>
                 <Col md={{span: 4, offset: 4}} className="text-center">
@@ -71,14 +71,14 @@ const DeletePost = () => {
                                 )}
                             </Form.Control>
                         </Form.Group>
-                        <Button variant="outline-danger" type="submit" className="mt-2">
+                        <Button variant="outline-danger" type="submit" className="mt-2" id="deletePostButton">
                             Delete post
                         </Button>
                     </Form>
                 </Col>
             </Row>
-            {error !== undefined && <ErrorMessage message={error}/>}
-            {success !== undefined && <SuccessMessage message={success} />}
+            {error !== undefined && <ErrorMessage message={error} id="deletePostError" />}
+            {success !== undefined && <SuccessMessage message={success} id="deletePostSuccess" />}
         </Container>
     );
 };

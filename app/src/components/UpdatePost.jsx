@@ -70,7 +70,7 @@ const UpdatePost = () => {
     };
 
     return (
-        <Container fluid>
+        <Container fluid id="updatePostContainer">
             <h2 className={classNames("text-center", "mt-5")}>Update a post</h2>
             <Row className={classNames("mx-auto", "mt-5")}>
                 <Col md={{span: 4, offset: 4}} className="text-center">
@@ -93,14 +93,14 @@ const UpdatePost = () => {
                             <Form.Label>Body</Form.Label>
                             <Form.Control as="textarea" onChange={(event) => setBody(event.target.value)} value={body}/>
                         </Form.Group>
-                        <Button variant="outline-primary" type="submit" className="mt-2">
+                        <Button variant="outline-primary" type="submit" className="mt-2" id="updatePostButton">
                             Update post
                         </Button>
                     </Form>
                 </Col>
             </Row>
-            {error !== undefined && <ErrorMessage message={error}/>}
-            {success !== undefined && <SuccessMessage message={success} />}
+            {error !== undefined && <ErrorMessage message={error} id="updatePostError" />}
+            {success !== undefined && <SuccessMessage message={success} id="updatePostSuccess" />}
         </Container>
     );
 };

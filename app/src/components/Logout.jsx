@@ -16,7 +16,7 @@ const Logout = () => {
     };
 
     return (
-        <Container className="mt-5">
+        <Container className="mt-5" id="logoutContainer">
             <Row>
                 <Col md={{span: 6, offset: 0}} className="mx-auto">
                     <h2>Are you sure you would like to log out?</h2>
@@ -24,10 +24,10 @@ const Logout = () => {
             </Row>
             <Row className="mt-3">
                 <Col md={{span: 2, offset: 4}}>
-                    <Button variant="outline-success" onClick={() => onLogout()}>Log out</Button>
+                    <Button variant="outline-success" onClick={() => onLogout()} data-test="logoutButton">Log out</Button>
                 </Col>
                 <Col md={{span: 2, offset: 0}}>
-                    <Button variant="outline-danger" onClick={() => history.goBack()}>Cancel</Button>
+                    <Button variant="outline-danger" onClick={() => history.goBack()} data-test="cancelLogoutButton">Cancel</Button>
                 </Col>
             </Row>
         </Container>

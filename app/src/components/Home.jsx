@@ -7,7 +7,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 const Home = () => {
     return (
-        <Container fluid>
+        <Container fluid id="homeContainer">
             <Row className="mt-5">
                 <Col md={{span: 5, offset: 0}} className="mx-auto">
                     <h1>Welcome to the Simple Frontend App!</h1>

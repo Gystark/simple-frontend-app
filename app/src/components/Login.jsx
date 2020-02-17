@@ -32,7 +32,7 @@ const Login = () => {
 
     return (
         <div className="vertical-center">
-            <Container fluid onSubmit={onSubmit}>
+            <Container fluid onSubmit={onSubmit} id="loginContainer">
                 <h1 className="text-center">Simple Frontend App</h1>
                 <Row className={classNames("mx-auto", "mt-5")}>
                     <Col md={{span: 6, offset: 3}} className="text-center">
@@ -51,13 +51,13 @@ const Login = () => {
                                     <Form.Control type="password" placeholder="Enter your password" required onChange={(e) => setPassword(e.target.value)}/>
                                 </Col>
                             </Form.Group>
-                            <Button variant="outline-primary" type="submit" className="mt-2">
+                            <Button variant="outline-primary" type="submit" className="mt-2" id="loginButton">
                                 Login
                             </Button>
                         </Form>
                     </Col>
                 </Row>
-                {error !== undefined && <ErrorMessage message={error} />}
+                {error !== undefined && <ErrorMessage message={error} id="loginError" />}
                 <Row className={classNames("mx-auto", "mt-4")}>
                     <Col md={{span: 6, offset: 3}} className="text-center">
                         <p className="text-muted">Login using <strong>test_user</strong> as the username and <strong>test_password</strong> as the password.</p>

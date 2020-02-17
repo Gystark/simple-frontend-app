@@ -53,7 +53,7 @@ const Posts = () => {
     };
 
     return (
-        <Container className="mt-5">
+        <Container className="mt-5" id="postsContainer">
             <Row className="mb-5">
                 <Col md={{span: 8, offset: 0}} className="mx-auto">
                     <ButtonToolbar>
@@ -83,9 +83,10 @@ const Posts = () => {
                                     <InputGroup.Text>Search:&nbsp;</InputGroup.Text>
                                 </InputGroup.Prepend>
                                 <FormControl type="text" placeholder={search || "Search text" }
-                                             onChange={(event) => setSearch(event.target.value)} />
+                                             onChange={(event) =>
+                                                 setSearch(event.target.value)} id="search-posts" />
                             </InputGroup>
-                            <Button variant="outline-danger" onClick={() => resetDefaults()}>Reset</Button>
+                            <Button variant="outline-danger" onClick={() => resetDefaults()} id="clear-posts-filters">Reset</Button>
                           </ButtonGroup>
                     </ButtonToolbar>
                 </Col>
@@ -93,9 +94,9 @@ const Posts = () => {
             <Row>
                 <Col md={{span: 8, offset: 0}} className="mx-auto">
                     {posts.map((post) =>
-                        <div key={post.id}>
+                        <div key={post.id} className="postContainer">
                             <Row key={`${post.id}-1`}>
-                                <Col className="col-md-auto">{post.id}</Col>
+                                <Col className="col-md-1">{post.id}</Col>
                                 <Col className="col-md-auto">{post.title}</Col>
                                 <Col className="col-md-auto">{moment(post.postedAt).format("lll")}</Col>
                             </Row>
@@ -105,7 +106,7 @@ const Posts = () => {
                         </div>)}
                 </Col>
             </Row>
-            {error !== undefined && <ErrorMessage message={error}/>}
+            {error !== undefined && <ErrorMessage message={error} id="postsError" />}
         </Container>
     );
 };
