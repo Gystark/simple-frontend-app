@@ -22,7 +22,7 @@ const NavMenu = () => {
                     <LinkContainer to={POSTS_ROUTE} exact={true}><Nav.Link>Posts</Nav.Link></LinkContainer>
                     <NavDropdown title="Admin" id="admin-nav-dropdown">
                         <LinkContainer to={CREATE_POST_ROUTE} exact={true}><NavDropdown.Item>Create Post</NavDropdown.Item></LinkContainer>
-                        <LinkContainer to={UPDATE_POST_ROUTE} exact={true}><NavDropdown.Item>Update post</NavDropdown.Item></LinkContainer>
+                        <LinkContainer to={UPDATE_POST_ROUTE} exact={true}><NavDropdown.Item>Update Post</NavDropdown.Item></LinkContainer>
                         <LinkContainer to={DELETE_POST_ROUTE} exact={true}><NavDropdown.Item>Delete Post</NavDropdown.Item></LinkContainer>
                     </NavDropdown>
                     <LinkContainer to={LOGOUT_ROUTE} exact={true}><Nav.Link>Logout</Nav.Link></LinkContainer>
