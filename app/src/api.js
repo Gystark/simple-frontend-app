@@ -1,12 +1,12 @@
 import axios from "axios";
-import {AUTH_TOKEN_KEY} from "./common";
+import {AUTH_TOKEN_KEY, getApiUrl} from "./common";
 import moment from "moment";
 
 const getAuthToken = () => {
     return localStorage.getItem(AUTH_TOKEN_KEY);
 };
 
-const BASE_URL = process.env.REACT_APP_BACKEND_HOST || "http://localhost:3001";
+const BASE_URL = getApiUrl();
 const getOptions = () => {
     return {headers: {Authorisation: getAuthToken()}}
 };

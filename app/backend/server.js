@@ -1,13 +1,14 @@
 // Based on https://github.com/typicode/json-server
 
 const jsonServer = require('json-server');
+const path = require("path");
 
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 
 const VALID_AUTH_TOKEN = "valid-auth-token";
-const UNAUTHORISED_ROUTES = ["/login"];
+const UNAUTHORISED_ROUTES = ["/login", "/swagger"];
 
 function allowUnauthorised(req) {
     return UNAUTHORISED_ROUTES.includes(req.path)
@@ -39,6 +40,10 @@ server.post("/login", (req, res) => {
     } else {
         res.status(401).json({"message": "Incorrect username or password"})
     }
+});
+
+server.get("/swagger", (_, res) => {
+    res.sendFile(path.join(__dirname, "swagger.json"));
 });
 
 server.use(router);

@@ -7,7 +7,7 @@ import {
     LOGIN_ROUTE,
     CREATE_POST_ROUTE,
     DELETE_POST_ROUTE,
-    UPDATE_POST_ROUTE, LOGOUT_ROUTE
+    UPDATE_POST_ROUTE, LOGOUT_ROUTE, DOCS_ROUTE
 } from "./routes";
 import Posts from "./components/Posts";
 import NavMenu from "./components/NavMenu";
@@ -17,6 +17,10 @@ import CreatePost from "./components/CreatePost";
 import DeletePost from "./components/DeletePost";
 import UpdatePost from "./components/UpdatePost";
 import Logout from "./components/Logout";
+
+import SwaggerUI from "swagger-ui-react";
+import "swagger-ui-react/swagger-ui.css";
+import {getApiUrl} from "./common";
 
 function App() {
     return (
@@ -50,6 +54,9 @@ function App() {
                         <NavMenu/>
                         <Logout/>
                     </ProtectedRoute>
+                    <Route exact path={DOCS_ROUTE}>
+                        <SwaggerUI url={`${getApiUrl()}/swagger`} docExpansion="list"/>
+                    </Route>
                 </Switch>
             </Router>
         </React.StrictMode>

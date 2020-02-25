@@ -14,6 +14,11 @@ const Home = () => {
                 </Col>
             </Row>
             <Row>
+                <Col md={{span: 5, offset: 0}} className="mx-auto">
+                    <h2>The backend API is documented on <a href="/docs" target="_blank">/docs</a></h2>
+                </Col>
+            </Row>
+            <Row>
                 <Col md={{span: 3, offset: 0}} className="mx-auto">
                     <div className="mt-3">It offers the following functionality:
                         <ListGroup variant="flush">
