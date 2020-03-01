@@ -6,6 +6,8 @@ import Col from "react-bootstrap/Col";
 import {Table} from "react-bootstrap";
 
 const Home = () => {
+    let taskNo = 1;
+
     return (
         <Container fluid id="homeContainer">
             <Row className="mt-5">
@@ -20,7 +22,7 @@ const Home = () => {
             </Row>
             <Row>
                 <Col md={{span: 8, offset: 0}} className={classNames("mx-auto", "mt-3")}>
-                    <Table border hover responsive>
+                    <Table bordered hover responsive>
                         <thead>
                         <tr>
                             <th>#</th>
@@ -29,63 +31,67 @@ const Home = () => {
                         </thead>
                         <tbody>
                         <tr>
-                            <td>1</td>
+                            <td>{taskNo++}</td>
                             <td>Fix the failing Logout test</td>
                         </tr>
                         <tr>
-                            <td>1</td>
+                            <td>{taskNo++}</td>
                             <td>Test that clicking the Log out button on the Logout screen logs the user out</td>
                         </tr>
                         <tr>
-                            <td>3</td>
+                            <td>{taskNo++}</td>
                             <td>Test that clicking the Cancel button on the Logout screen does not log the user out</td>
                         </tr>
                         <tr>
-                            <td>4</td>
+                            <td>{taskNo++}</td>
+                            <td>Test that the Home screen displays the "Welcome to the Simple Frontend App!" title</td>
+                        </tr>
+                        <tr>
+                            <td>{taskNo++}</td>
                             <td>Test that the Posts screen shows the expected posts from a stubbed API call</td>
                         </tr>
                         <tr>
-                            <td>5</td>
+                            <td>{taskNo++}</td>
                             <td>Test that the Posts screen shows the expected error message when it fails to fetch posts from the API</td>
                         </tr>
                         <tr>
-                            <td>6</td>
+                            <td>{taskNo++}</td>
                             <td>Test sorting, ordering and searching on the Posts screen (combined, separately or both)</td>
                         </tr>
                         <tr>
-                            <td>7</td>
+                            <td>{taskNo++}</td>
                             <td>Test that clicking Reset on the Posts screen resets sort, order and search criteria</td>
                         </tr>
                         <tr>
-                            <td>8</td>
+                            <td>{taskNo++}</td>
                             <td>Test successful post creation on Create Post</td>
                         </tr>
                         <tr>
-                            <td>9</td>
+                            <td>{taskNo++}</td>
                             <td>Test unsuccessful post creation on Create Post</td>
                         </tr>
                         <tr>
-                            <td>10</td>
+                            <td>{taskNo++}</td>
                             <td>Test successful post update on Update Post</td>
                         </tr>
                         <tr>
-                            <td>11</td>
+                            <td>{taskNo++}</td>
                             <td>Test unsuccessful post creation on Update Post</td>
                         </tr>
                         <tr>
-                            <td>12</td>
+                            <td>{taskNo++}</td>
                             <td>Test updating multiple posts on Update Post</td>
                         </tr>
                         <tr>
-                            <td>13</td>
+                            <td>{taskNo++}</td>
                             <td>Test successful post deletion on Delete Post</td>
                         </tr>
                         <tr>
-                            <td>14</td>
+                            <td>{taskNo++}</td>
                             <td>Test unsuccessful post deletion on Delete Post</td>
                         </tr>
                         <tr>
-                            <td>15</td>
+                            <td>{taskNo++}</td>
                             <td>Test deleting multiple posts on Delete Post</td>
                         </tr>
                         </tbody>
