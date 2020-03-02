@@ -32,7 +32,7 @@ const Home = () => {
                         <tbody>
                         <tr>
                             <td>{taskNo++}</td>
-                            <td>Fix the failing Logout test</td>
+                            <td>Fix the failing Login test</td>
                         </tr>
                         <tr>
                             <td>{taskNo++}</td>
